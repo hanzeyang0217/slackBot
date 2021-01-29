@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>incomingWebhook</title>
+  </head>
+  <body>
+    <button id="btn">btn</button>
+    <script>
+      btn.onclick = () => {
+        const apiUrl = "コピペ";
+        const payload = JSON.stringify({
+          username: "webhookbot",
+          text: "<!channel> いいねこれ",
+          icon_emoji: ":ghost:",
+        });
+        const httpRequest = new XMLHttpRequest();
+        httpRequest.open("POST", apiUrl, false);
+        httpRequest.send(payload);
+      };
+    </script>
+  </body>
+</html>
